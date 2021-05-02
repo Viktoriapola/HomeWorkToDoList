@@ -15,34 +15,29 @@ button.addEventListener('click', () => {
 
     const edit = document.createElement('button');
     edit.addEventListener('click', () => {
-        let inputEdit = document.createElement('input');
-        let ret = document.createElement('button');
-        ret.innerHTML = 'Return';
-        li.replaceWith(inputEdit, ret);
-        // ret.addEventListener('click', () => {
-        //     li.innerHTML = inputEdit.value;   
-        // });
+        li.remove();
+        remove.remove();
+        edit.remove();
+        input.value = li.innerText;
     });
     edit.innerHTML = 'Edit';
-
-    li.innerHTML = input.value;
+     
+    li.innerText = input.value;
+    
     li.append(remove);
     li.append(edit);
     list.append(li);
+    products.push(input.value);
 
-    // products.forEach((item) => {
-    //     if (item === input.value) {
-    //         alert('Уже есть');
-    //     } else {
-    //         products.push(input.value);         
-    //         li.append(remove);
-    //         li.append(edit);
-    //         list.append(li);
-    //     };
-    // });
+    // products.forEach ((item) => {
+    //     remove.remove();
+    //     edit.remove();
+    //     if(item === li.innerText) {
+    //         console.log('Уже есть');
+    //     }
+    // })
 
-
-    if (input.value == input.value) {
+    if (input.value === input.value) {
         input.value = '';
     };
 });
